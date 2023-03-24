@@ -9,6 +9,7 @@
     --primary: #59B24D;
     --baseFont: #3F7F37;
     --secondary: #D06023;
+    --secondaryDark: #b3531f;
     --baseSecondary: #FFFFFF;
     --black: rgb(33, 18, 10);
     --primaryFont: 'Nunito', sans-serif;
@@ -28,7 +29,7 @@ body {
 }
 img, picture, video, canvas, svg {
     display: block;
-    max-width: 100%;
+    width: 100%;
 }
 input, button, textarea, select {
     font: inherit;
@@ -165,6 +166,9 @@ p {
 
 /*About*/
 @media (max-width:768px){
+    .about{
+        margin: auto 1.5rem;
+    }
     .grid2{
         grid-template-columns: 1fr;
     }
@@ -172,4 +176,73 @@ p {
         margin: 0 auto;
         grid-row: 1/2;
     }
+}
+
+.about__text :first-child{
+    margin-bottom: 2rem;
+}
+
+/*Bloques*/
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+@media (min-width:768px){
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque__img{
+    margin: 0 auto;
+    
+}
+.buy__title{
+    margin-top: 2rem;
+}
+.bloque{
+    
+    text-align: center;
+}
+
+/*Pagina del producto*/
+@media (min-width:768px){
+    .item{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+.form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.form__submit{
+    background-color: var(--secondary);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--primaryFont);
+    padding: 2rem;
+    border-radius: .5rem;
+    color: var(--baseSecondary);
+    transition: background-color .3s ease;
+    grid-column: 1/3;
+}
+
+.form__submit:hover {
+    cursor: pointer;
+    background-color: var(--secondaryDark);
+}
+
+.form__field{
+    border: .5rem solid var(--secondaryDark);
+    background-color: transparent;
+    font-size: 2rem;
+    font-family: var(--primaryFont);
+    padding: 1rem;
+    appearance: none;
 }
